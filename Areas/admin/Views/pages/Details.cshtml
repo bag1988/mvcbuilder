@@ -1,0 +1,58 @@
+﻿@model mvcbuilder.Models.Base.page
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>page</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.roles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.namePage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namePage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urlPage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urlPage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.keyword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.keyword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.meta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.meta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPage }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

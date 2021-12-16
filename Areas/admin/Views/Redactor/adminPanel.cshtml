@@ -1,0 +1,33 @@
+﻿<script src="~/Areas/Admin/js/bag.js"></script>
+<script src="~/Areas/Admin/js/BAGadminScript.js"></script>
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/BAGstyle.css" rel="stylesheet" />
+<input id="actionName" type="hidden" value="@ViewContext.RouteData.Values["action"].ToString()" />
+<div id="adminPanel" class="movingDiv">
+    <h4>Меню<i onclick="bag('#menuAdminPage').toggle(); bag(this).replaceCss('icon-caret-up icon-caret-down');" class="icon-caret-up"></i></h4>
+    <div id="menuAdminPage">
+        <hr />
+        <div>
+            @Html.ActionLink("Страницы", "Index", "pages", new { area = "admin" }, new { @class="abtn" })
+        </div>
+        <div>
+            <a class="abtn" onclick="showViewModule('#parentContainer')">Расширения</a>
+        </div>
+        <hr />
+        <div>
+            <a class="abtn" onclick="saveChangePage('@ViewContext.RouteData.Values["controller"].ToString()/@ViewContext.RouteData.Values["action"].ToString()')">Сохранить изменения</a>
+        </div>
+    </div>
+    <div>
+        <div id="editorMenuToolbar" class="btn-toolbar" style="cursor:move;" data-role="editor-toolbar" data-target="#editor">
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var readyAdminPanel = (callback) => {
+        if (document.readyState != "loading") callback();
+        else document.addEventListener("DOMContentLoaded", callback);
+    }
+    readyAdminPanel(() => { startRedactor(); });
+</script>

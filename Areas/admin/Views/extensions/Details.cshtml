@@ -1,0 +1,50 @@
+﻿@model mvcbuilder.Models.Base.module
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>module</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nameModule)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nameModule)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.defaultHtml)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.defaultHtml)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.defaultCss)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.defaultCss)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urlModule)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urlModule)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idModule }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
